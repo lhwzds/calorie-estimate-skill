@@ -19,22 +19,22 @@ A minimal skill: you turn the meal into grams and per-100 g nutrient values; `sc
                "per100g": {"kcal": 87, "protein": 1.87, "carbs": 20.1, "fat": 0.1, "fiber": 1.8,
                            "potassium": 379, "vit_c": 13}}]}
    ```
-   `python3 scripts/calc.py day.json`. Keys: `kcal protein carbs fat fiber satfat added_sugar` (g), `sodium calcium iron magnesium potassium zinc vit_c` (mg), `vit_a vit_d` (µg).
-5. **Answer**: food table (grams, kcal, protein), total vs TDEE with the deficit, energy split, then the top 3 gaps or excesses, each with one concrete food fix. State your portion assumptions in one line. Not medical advice.
+   `python3 scripts/calc.py day.json`. Keys: `kcal` (kcal), `protein carbs fat fiber alcohol satfat added_sugar` (g; `carbs` is total carbohydrate including fiber), `sodium calcium iron magnesium potassium zinc vit_c` (mg), `vit_a vit_d` (µg).
+5. **Answer**: food table (grams, kcal, protein), total vs TDEE with the deficit, energy split, then the top 3 gaps or excesses, each with one concrete food fix. State your portion assumptions in one line. One day below a target is not a deficiency (targets apply to usual intake; fiber and potassium are Adequate Intakes): look at several days before calling a gap. Not for pregnancy, breastfeeding, children or medical diets; not medical advice.
 
 ## Formulas
 
 **Energy**
 - Amount eaten: `amount = per_100g × grams / 100`
-- Food energy (Atwater): `kcal = 4·protein + 4·(carbs − fiber) + 2·fiber + 9·fat` (+ `7·alcohol`); the label's kcal is used when given
-- Energy split: `protein% = 4·P / kcal`, `carbs% = 4·(C − fiber) / kcal`, `fat% = 9·F / kcal`; healthy ranges 10–35 / 45–65 / 20–35 %
-- Basal metabolic rate (Mifflin–St Jeor): `10·kg + 6.25·cm − 5·age + 5` (men), `… − 161` (women)
+- Food energy (general Atwater factors, fiber at 2 kcal/g): `kcal = 4·protein + 4·(carbs − fiber) + 2·fiber + 9·fat + 7·alcohol`; the label's kcal is used when given
+- Energy split: `protein% = 4·P / kcal`, `carbs% = (4·(C − fiber) + 2·fiber) / kcal`, `fat% = 9·F / kcal`; healthy ranges 10–35 / 45–65 / 20–35 %
+- Resting energy expenditure, used as BMR (Mifflin–St Jeor 1990): `10·kg + 6.25·cm − 5·age + 5` (men), `… − 161` (women)
 - Daily need: `TDEE = BMR × activity` (1.2 / 1.375 / 1.55 / 1.725 / 1.9)
-- Deficit: `TDEE − intake`; weekly fat loss ≈ `deficit × 7 / 7700` kg (rough; real loss slows as weight drops)
+- Deficit: `TDEE − intake`; weekly loss ≈ `deficit × 7 / 7700` kg, a rough energy equivalent, not a prediction (real loss slows as weight drops)
 
 **Nutrients**
 - Coverage: `NAR_i = min(1, intake_i / target_i)`
-- Adequacy score (MAR, Madden & Yoder 1976): `100 × mean(NAR_i)` over the 10 nutrients below
+- Adequacy score (MAR, Madden & Yoder 1976): `100 × mean(NAR_i)` over the 10 nutrients below; missing data counts as 0, so the script flags it
 - Limits: saturated fat < 10 % kcal, added sugar < 10 % kcal (Dietary Guidelines 2020–2025), sodium ≤ 2300 mg
 
 **Daily targets, adults 19–50 (NASEM DRIs)**
