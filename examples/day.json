@@ -1,0 +1,21 @@
+{
+ "person": {"sex": "f", "age": 35, "height_cm": 165, "weight_kg": 62, "activity": "moderate"},
+ "foods": [
+  {"name": "potato, boiled", "grams": 450,
+   "per100g": {"kcal": 87, "protein": 1.87, "carbs": 20.13, "fat": 0.1, "fiber": 1.8, "satfat": 0.026,
+               "sodium": 4, "calcium": 5, "iron": 0.31, "magnesium": 22, "potassium": 379, "zinc": 0.3,
+               "vit_a": 0, "vit_c": 13, "vit_d": 0}},
+  {"name": "broccoli, boiled", "grams": 300,
+   "per100g": {"kcal": 35, "protein": 2.38, "carbs": 7.18, "fat": 0.41, "fiber": 3.3, "satfat": 0.079,
+               "sodium": 41, "calcium": 40, "iron": 0.67, "magnesium": 21, "potassium": 293, "zinc": 0.45,
+               "vit_a": 77, "vit_c": 64.9, "vit_d": 0}},
+  {"name": "chicken breast, roasted", "grams": 250,
+   "per100g": {"kcal": 165, "protein": 31.02, "carbs": 0, "fat": 3.57, "fiber": 0, "satfat": 1.01,
+               "sodium": 74, "calcium": 15, "iron": 1.04, "magnesium": 29, "potassium": 256, "zinc": 1.0,
+               "vit_a": 6, "vit_c": 0, "vit_d": 0.1}},
+  {"name": "olive oil", "grams": 27,
+   "per100g": {"kcal": 884, "protein": 0, "carbs": 0, "fat": 100, "fiber": 0, "satfat": 13.81,
+               "sodium": 2, "calcium": 1, "iron": 0.56, "magnesium": 0, "potassium": 1, "zinc": 0,
+               "vit_a": 0, "vit_c": 0, "vit_d": 0}}
+ ]
+}
