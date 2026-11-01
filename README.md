@@ -1,4 +1,4 @@
-# calorie-estimate
+# calorie-estimate-skill
 
 A minimal [Agent Skill](https://agentskills.io) that estimates the calories and key nutrients of what someone ate and compares them with that person's own needs.
 
@@ -12,7 +12,7 @@ The agent turns a meal into grams and per-100 g nutrient values (from the label 
 Copy this folder into your agent's skills directory, for example:
 
 ```sh
-git clone https://github.com/lhwzds/calorie-estimate ~/.claude/skills/calorie-estimate
+git clone https://github.com/lhwzds/calorie-estimate-skill ~/.claude/skills/calorie-estimate
 ```
 
 ## Run it directly
