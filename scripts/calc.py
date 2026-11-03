@@ -2,7 +2,7 @@
 """Calories and key nutrients of a day's food vs the person's needs.
 
 Usage: python3 calc.py day.json      (or pipe the JSON on stdin)
-Input:  {"person": {"sex": "m", "age": 26, "height_cm": 180, "weight_kg": 87, "activity": "light"},
+Input:  {"person": {"sex": "f", "age": 35, "height_cm": 165, "weight_kg": 62, "activity": "moderate"},
          "foods": [{"name": "potato, boiled", "grams": 450,
                     "per100g": {"kcal": 87, "protein": 1.9, "carbs": 20, "fat": 0.1, "fiber": 1.8, ...}}]}
 Nutrient keys and units are listed in UNITS; leave out what you don't know (it shows as missing).
