@@ -52,9 +52,9 @@ def main():
                 total[k] += n[k]
             elif k != "kcal":
                 missing[k].append(f["name"])
+        print(f"{f['name']:<28}{f['grams']:>6.0f}{n['kcal']:>8.0f}{n.get('protein', 0):>8.1f}g")
     if missing["kcal"]:
         print(f"note: kcal estimated without full protein/carbs/fat for {', '.join(missing['kcal'])}")
-        print(f"{f['name']:<28}{f['grams']:>6.0f}{n['kcal']:>8.0f}{n.get('protein', 0):>8.1f}g")
 
     kcal = total["kcal"] or 1
     print(f"\nTotal {total['kcal']:.0f} kcal | need (TDEE) {tdee:.0f} | deficit {tdee - total['kcal']:.0f}"

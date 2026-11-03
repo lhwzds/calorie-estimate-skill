@@ -23,6 +23,10 @@ python3 scripts/calc.py examples/day.json
 
 ```
 food                             g    kcal  protein
+potato, boiled                 450     392     8.4g
+broccoli, boiled               300     105     7.1g
+chicken breast, roasted        250     412    77.5g
+olive oil                       27     239     0.0g
 
 Total 1148 kcal | need (TDEE) 2039 | deficit 891 (~0.81 kg/week by the rough 7700 kcal/kg rule)
 Energy split: protein 32% (10-35) | carbs 36% (45-65) | fat 29% (20-35)
